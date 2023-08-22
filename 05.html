@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+        <meta charset="utf-8" />
+        <title>HTML5 ❤😂</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+        <link rel="stylesheet" href="style01.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row rowLine">
+                <div class="col">
+                    <h4 class="text-primary">자바스크립트</h4>
+                </div>
+
+            <script>
+            
+            </script>
+
+            <div class="row rowLine">
+                <div class="col" id="header">
+                    Header
+                </div>
+
+                <div class="col" id="body">
+                    Body
+                </div>
+
+                <div class="col" id="footer">
+                    Footer
+                </div>
+
+                <div class="col" id="footer">
+                    <button type="button" class="btn btn-primary" onClick="counter2(20)">Counter🔫</button>
+                </div>
+                </div>
+            </div>
+
+            <div class="rowLine">
+                <div class="col">
+                    <div id="memo"></div>
+                </div>
+            </div>
+
+            <div class="rowLine">
+                <div class="col">
+                    <input type="number" id="age" class="form-control" value="10" min="1" max="100" step="10" onChange="checkAge()">
+                </div>
+                <div class="col">
+                    <input type="text" class="form-control" value="홍a길동">
+                </div>
+            </div>
+        </div>
+
+    <script>
+        // id 선택 시 # 사용
+        var headerold = document.getElementById('header');
+        var header = document.querySelector('#header');
+        header.onclick = function() {
+            header.style.background = "tomato";
+        }
+
+        // one line
+        /* 
+        multi line 
+        */
+
+        // my_family_count myFamilyCount:
+        var i = 3; //var 전역변수
+        let j = 5; //let 단발성으로 쓰고 버리는 memory
+
+        for(let k=1; k<10; k++) {
+            console.log("k = " + k);
+        }
+
+        // 같은 일이 2번 이상 반복되면 함수만들기
+        function counter() {
+            for(let i = 1; i<10; i++) {
+                console.log("counter = " + i);
+            }            
+        }
+
+        function counter2(limit) {
+            // if (typeof(limit) != 'number') {
+            //     alert('It is not number');
+            //     return;
+            // }
+            for(let i = 1; i<limit; i++) {
+                console.log("counter2 = " + i);
+            }            
+        }
+
+        counter();
+        counter2(5);
+
+        /*
+            기본 자료형
+                number, string, boolean, undefined, null(0번지_비어있음을 나타냄)
+
+            복합 자료형
+                array(메모리 주소를 연속적으로 차지한다는 치명적 단점 있음_공간 효율적 활용 X)
+            
+            타입확인 : typeof(변수명);
+
+            character & string 차이 뒤에 null 들어가냐 안들어가냐
+            문자열; 문자들의 합 ""
+
+            boolean true/false
+            ➡️ 이름 지을 때 is~ 이렇게 짓는게 좋다
+
+        */
+
+        console.log("type of j = " + typeof(j));
+
+        let birthYear = 2000;
+        let a = 11;
+        let b = 0.2;
+        let c = a+b;
+
+        console.log("c= " + c + "type of c = " + typeof(c));
+
+        var memo = document.querySelector("#memo");
+        memo.innerHTML += "Hello<br>";
+        memo.innerHTML += "type of c = " + typeof(c) + "<br>";
+
+        let isOn = true;
+        memo.innerHTML += (2>1) + "<br>";
+        memo.innerHTML += "type of isOne = " + typeof(isOn) + "<br>";
+
+        // let init;
+        let init = null;
+        memo.innerHTML += "type of init = " + typeof(init) + "<br>";
+
+        let season = ["봄", "여름", "가을", "겨울"];
+        let array = [];
+
+        // 자바스크립트에서는 array를 객체, structure로 봄
+        array[0] = "문자";
+        array[1] = 1111;
+        array[2] = true;
+
+        memo.innerHTML += "array = " + array + "<br>";
+
+        let person = {
+            name : "Joy",
+            age : 12,
+            address : "Korea"
+        };
+
+        console.log("type of person = " + typeof(person) + "<br>");
+        console.log("name = " + person["name"]); //associative array []index를 숫자가 아닌 문자로 주는 것
+
+        array2 = [];
+        array2["name"] = "Amy"
+        array2["age"] = 23;
+
+        console.log("array name = " + array2["name"]);
+
+        // 연산자: + - * /
+        // 비트연산자: & | ^ ~ ➡️ & 사용하는 이유; subnet mask
+        /* 
+            a===b (memory & type 일치하는가) <-> a !== b
+            a==b (result; true or false)
+
+            do-while ; 무조건 1번은 실행
+            while ; 조건 안맞으면 실행 안 할 수도
+        */
+
+        let x = 1;
+        console.log(x++);
+        console.log(++x);
+
+        function checkAge() {
+            let age = document.querySelector("age");
+            // 사용자 입력 문자 다 string으로 인식하기 때문에
+            if(parseInt(age.value) > 20) 
+                console.log("over 20" + (age.value + 1));
+            else
+                console.log("under 20" + (age.value) + 1);
+        }
+
+        for (let a = 1; a < 10; a++) {
+
+        }
+
+        a = 10;
+        while(a>0) 
+        {
+            console.log(a);
+            a--;
+        }
+
+        // function add(a,b) {
+        //     return a+b;
+        // }
+        //let sum = add(1,2);
+
+        // sayHi라는 함수가 있는데 () 파라미터가 없고 이녀석은 {}이런 녀석이야~
+        const sayHi = () => { 
+            console.log("i am say hi");
+        };
+
+        sayHi();
+
+        // 람다식
+        const square = (x) => {
+            return x * x; 
+        }
+
+        const square2 = x => x * x;
+
+        console.log("square = " + square(3));
+
+        const add = (x, y) => {
+            return x + y;
+        }
+
+        const add2 = (x, y) => x + y;
+        console.log("3 + 5 = " + add(3, 5));
+        console.log("3 + 5 = " + add2(3, 5));
+
+        const someArray = [1,2,3,4,5];
+        someArray.forEach(function(item) {
+            console.log(item);
+        });
+
+        console.log("----------------------------");
+        someArray.forEach(item => console.log(item));
+
+        /*
+            int[] numbers = new Integer[5];
+        */
+
+        const otherArray = [
+            {"name" : "kim", "age" : 12},
+            {"name" : "lee", "age" : 34}
+        ];
+
+        otherArray.forEach(item => console.log(item.name + ", " + item["age"]))
+
+        var globalNum = 3;
+
+        function testNum() {
+
+        }
+
+        
+        // 익명함수
+        var functionName = function(a,b){
+            let sum = a + b;
+            return sum;
+        }
+
+        var result = functionName(3,4);
+
+        // 즉시실행 함수; (function(){})(); 단발성
+        var result = (function(){
+            return 10 + 20;
+        })();
+
+        console.log("result = " +result);
+
+        const hi = function() {
+            return "Hi~~"";
+        }
+
+        const hello = () => {return "Hello~"};
+
+        const hi2 = () => "Hi~~";
+
+    </script>
+
+    </body>
+</html>
